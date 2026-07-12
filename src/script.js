@@ -88,7 +88,7 @@ function sendMessage() {
   };
 
   const serviceID = "tunedtreks_service";
-  const templateID = "template_sqwv5nl";
+  const templateID = "tunedtreks_contact_form";
 
   emailjs
     .send(serviceID, templateID, params)
