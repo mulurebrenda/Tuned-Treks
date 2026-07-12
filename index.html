@@ -26,6 +26,11 @@
       src="https://kit.fontawesome.com/49f250ac70.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
     <script type="text/javascript">
       (function () {
         emailjs.init("tKjwsdoDjQIricSfu");
@@ -268,7 +273,7 @@
           <h2 class="contact-heading">Contact us</h2>
         </div>
         <div class="row contact-container pt-2 pb-5 m-auto hidden">
-          <div class="col-md-7 contact-form m-auto m-auto pb-4 pe-2">
+          <div class="col-md-7 contact-form m-auto pb-4 pe-2">
             <form onsubmit="return handleFormSubmit(event);">
               <input
                 type="text"

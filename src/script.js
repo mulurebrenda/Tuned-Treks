@@ -58,10 +58,6 @@ function copyText(buttonElement) {
 }
 
 //Cards Transition
- // ---- Roll-in / roll-out cards (features, story, offer cards, etc.) ----
-  // Unlike .reveal above, this observer is NEVER unobserved: every time a
-  // card crosses the trigger zone it toggles the class, so scrolling down
-  // rolls the card in and scrolling back up rolls it back out again.
   var rollEls = document.querySelectorAll('.roll-card');
   if ('IntersectionObserver' in window && rollEls.length) {
     var rollObserver = new IntersectionObserver(function (entries) {
@@ -81,12 +77,6 @@ function copyText(buttonElement) {
   } else {
     rollEls.forEach(function (el) { el.classList.add('roll-in'); });
   }
-
-//copyright
-const now = new Date();
-const year = now.getFullYear();
-const currentYear = document.querySelector(".year");
-currentYear.innerHTML = `${year}`;
 
 //form submit
 function sendMessage() {
@@ -110,7 +100,7 @@ function sendMessage() {
         iconColor: "#858587",
         title: "Message sent!",
         color: "#858587",
-        showConfirmButton: true,
+        showConfirmButton: false,
         timer: 1500,
         showClass: {
           popup: `
@@ -135,6 +125,15 @@ function sendMessage() {
 function handleFormSubmit (e) {
   e.preventDefault();
   sendMessage();
+
+  document.getElementById("name").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("phone").value = "";
+  document.getElementById("message").value = "";
 };
 
-
+//copyright
+const now = new Date();
+const year = now.getFullYear();
+const currentYear = document.querySelector(".year");
+currentYear.innerHTML = `${year}`;

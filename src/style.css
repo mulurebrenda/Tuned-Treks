@@ -381,7 +381,7 @@ a.my-portfolio:hover{
   }
   form {
     width: 90%;
-    margin-left: 30px;
+    margin: auto;
     padding: 20px 45px;
   }
 }
@@ -443,7 +443,7 @@ h1.brand-name {
     flex-wrap: wrap;
   }
 
-  /*contact-page*/
+  /*contact-section*/
   div.contact-container {
     margin: 40px 80px;
   }
