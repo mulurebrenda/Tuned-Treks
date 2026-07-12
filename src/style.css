@@ -155,12 +155,19 @@ div.brand {
   margin: auto;
   font-family: var(--heading-font);
 }
+
+@font-face {
+font-family: "Edo";
+src: url("/media/edo.regular.ttf") format("truetype");
+font-weight: 400;
+font-style: normal;
+}
+
 h1.brand-name {
-  font-family: var(--heading-font);
+  font-family: "Edo", sans-serif;
   color: var(--main-color);
-  font-size: 5em;
+  font-size: 4.5em;
   font-style: italic;
-  font-weight: 700;
 }
 h2.slogan {
   color: var(--main-color);
@@ -283,9 +290,10 @@ h3.contacts-sub-heading {
 }
 h4.sub-heading {
   font-size: 2em;
-  font-family: var(--heading-font);
-  font-weight: 800;
   color: var(--main-color);
+}
+h4.sub-heading, span.TT{
+  font-family: "Edo", sans-serif;
 }
 p.contacts-about {
   margin-top: 20px;
@@ -352,6 +360,9 @@ footer {
 p.brand strong, a.my-portfolio {
   font-size: 0.8em;
 }
+span.TT{
+  font-size: 0.72em;
+}
 a.my-portfolio{
   color: var(--hover-color);
 }
@@ -385,17 +396,7 @@ a.my-portfolio:hover{
     padding: 20px 45px;
   }
 }
-@media (max-width: 470px) {
-  #sidebar {
-    width: 100%;
-  }
-h1.brand-name {
-    font-size: 2.5em;
-  }
-  h2.slogan{
-    font-size: 1.05em;
-  }
-}
+
 @media (max-width: 576px) {
   div.logo {
     padding-left: 25px;
@@ -414,7 +415,7 @@ h1.brand-name {
     line-height: 20px;
   }
   h1.brand-name {
-    font-size: 3.5em;
+    font-size: 3em;
   }
   h2.slogan{
     font-size: 1.1em;
@@ -422,7 +423,6 @@ h1.brand-name {
   div.hero-background {
     height: 55vh;
   }
-
   /*contact section*/
   div.contact-container {
     margin: 50px;
@@ -442,9 +442,20 @@ h1.brand-name {
     display: flex;
     flex-wrap: wrap;
   }
-
   /*contact-section*/
   div.contact-container {
     margin: 40px 80px;
+  }
+}
+
+@media (max-width: 470px) {
+  #sidebar {
+    width: 100%;
+  }
+h1.brand-name {
+    font-size: 2.5em;
+  }
+  h2.slogan{
+    font-size: 1em;
   }
 }
