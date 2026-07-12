@@ -1,0 +1,450 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+div.container-fluid {
+  overflow: hidden;
+}
+:root {
+  --main-color: #ffffff;
+  --background-color: #000000cf;
+  --hero-footer-background-color: #eef1f3;
+  --contact-form-text-border-color: #000000ac;
+  --hover-color: #9ca1ae;
+  --heading-font: "Varela Round", sans-serif;
+  --body-font: "Asap", sans-serif;
+}
+.hidden {
+  opacity: 0;
+  transition: all ease-in 0.6s;
+}
+.show {
+  opacity: 1;
+}
+#active {
+  color: var(--hover-color);
+}
+
+div.logo-navbar {
+  position: fixed;
+  width: 105vw;
+  height: 70px;
+  background-color: var(--background-color);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+div.logo {
+  padding-left: 40px;
+}
+
+ul.hideOnMobile {
+  padding-bottom: 10px;
+}
+ul.navbar-links,
+ul.gallery-links {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+ul.navbar-links li a {
+  padding-bottom: 22px;
+  color: var(--main-color);
+  font-family: var(--heading-font);
+  font-size: 0.7em;
+  font-weight: 600;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+}
+ul.navbar-links li a:hover {
+  color: var(--hover-color);
+}
+ul.hideOnMobile li a::after, button.send-btn::after {
+  content: "";
+  position: absolute;
+  transform: scaleX(0);
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--hover-color);
+  transform-origin: bottom right;
+  transition: transform ease-in-out 0.5s;
+}
+ul.hideOnMobile li a:hover::after, button.send-btn:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+div.menu-icon {
+  display: none;
+}
+#sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgb(225, 228, 232, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0px 10px rgba(6, 6, 6, 0.1);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+#sidebar li {
+  margin: 10px;
+}
+#sidebar li,
+#sidebar a {
+  width: 100%;
+}
+#sidebar svg {
+  fill: var(--main-color);
+}
+#sidebar svg:hover {
+  fill: var(--hover-color);
+}
+section.about-section, section.features-section, section.contact-section {
+  background-color: var(--background-color);
+  z-index: 1000;
+}
+
+div.hero-background {
+  height: 80vh;
+}
+section.header-section-bg {
+  background: url(/media/images/interior-1.jpeg) center no-repeat;
+  background-size: cover;
+  background-attachment: fixed; 
+}
+
+button.book,
+button.welcome,
+button.password {
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 16px;
+  color: var(--background-color);
+}
+button.book:hover,
+button.welcome:hover,
+button.password:hover {
+  background: none;
+  color: var(--main-color);
+  border: solid 1px var(--main-color);
+  transition: transform ease-in-out 3s;
+}
+button.book a, button.welcome a{
+  color: var(--background-color);
+}
+button.book a:hover, button.welcome a:hover{
+  color: var(--main-color);
+  transition: transform ease-in-out 3s;
+}
+
+div.brand {
+  margin: auto;
+  font-family: var(--heading-font);
+}
+h1.brand-name {
+  font-family: var(--heading-font);
+  color: var(--main-color);
+  font-size: 5em;
+  font-style: italic;
+  font-weight: 700;
+}
+h2.slogan {
+  color: var(--main-color);
+  font-size: 1.5em;
+  font-family: var(--heading-font);
+}
+h2.welcome,
+h2.booking-heading, 
+h2.contact-heading{
+  font-family: var(--heading-font);
+  color: var(--main-color);
+  font-size: 3em;
+  font-style: italic;
+}
+p.about, p.about a,
+p.details {
+  color: var(--main-color);
+  font-family: var(--body-font);
+  font-size: 0.95em;
+  font-weight: 300;
+  line-height: 28px;
+}
+
+/* features*/
+div.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+div.feature-details {
+  border-radius: 10px;
+  border: 1px solid var(--main-color);
+  margin: 10px 20px;
+  background: none;
+  padding: 30px 20px 15px;
+  transition: all 0.5s ease-in-out;
+}
+div.feature-details:hover {
+  box-shadow: 2px 2px 5px rgb(215, 215, 215, 0.4);
+}
+
+h3.features-sub-heading, 
+h3.booking-subheading {
+  font-size: 1.8em;
+  font-family: var(--heading-font);
+  color: var(--main-color);
+}
+h2.booking-heading, 
+h3.booking-subheading, div.booking-info p.details {
+  color: var(--main-color);
+  font-family: var(--heading-font);
+}
+ul.comfort-details {
+  color: var(--main-color);
+  font-size: 0.9em;
+}
+div.date {
+  margin: auto;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+/*booking section*/
+section.booking-section {
+  background: url(/media/images/interior-2.jpg) center no-repeat;
+  background-size: cover;
+   background-attachment: fixed; 
+}
+#booking, section.header-section {
+  background-color: #000000a0;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  padding: 20px 30px;
+  height: 100%;
+}
+div.booking-info{
+  background: #8585877a;
+  border-radius: 15px;
+}
+
+div.thankyou-section p.details{
+  font-size: 1.1em;
+  font-family: var(--heading-font);
+  line-height: 25px;
+}
+
+/*Cards*/
+.roll-card{
+    opacity:0;
+    transform:translateY(90px) rotate(-9deg);
+    transform-origin:50% 100%;
+    transition:
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.6s ease;
+    will-change:transform, opacity;
+  }
+  /* Alternate tilt direction left/right, like a card fan */
+  .roll-card:nth-child(even){
+    transform:translateY(90px) rotate(9deg);
+  }
+  .roll-card.roll-in{
+    opacity:1;
+    transform:translateY(0) rotate(0deg);
+  }
+  @media (prefers-reduced-motion: reduce){
+    .roll-card{ transition:opacity .3s ease; transform:none !important; opacity:1; }
+  }
+
+/*contact section*/
+div.contact-container {
+  margin: 0 20px;
+}
+div.contacts-intro {
+  padding-left: 40px;
+  margin-top: 20px;
+}
+h3.contacts-sub-heading {
+  font-size: 1.3em;
+  font-family: var(--heading-font);
+}
+h4.sub-heading {
+  font-size: 2em;
+  font-family: var(--heading-font);
+  font-weight: 800;
+  color: var(--main-color);
+}
+p.contacts-about {
+  margin-top: 20px;
+  font-size: 0.95em;
+}
+a.contact-link {
+  color: var(--main-color);
+}
+a.contact-link:hover {
+  color: var(--hover-color);
+}
+
+form {
+  border: 0.1em solid var(--main-color);
+  border-radius: 30px;
+  box-shadow: 1px 1px 2px var(--main-color);
+  display: grid;
+  margin-top: 20px;
+  padding: 30px 35px;
+}
+form input,
+form textarea {
+  padding: 5px;
+  font-family: var(--heading-font);
+  font-size: 0.75em;
+  color: var(--main-color);
+  outline: none;
+  line-height: 30px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--main-color);
+  transition: border-color 0.5s;
+}
+form input:focus,
+form textarea:focus {
+  border-bottom-color: var(--main-color);
+}
+button.send-btn {
+  color: var(--main-color);
+  font-size: 1em;
+  margin: 10px auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--heading-font);
+  font-weight: 500;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+}
+button.send-btn:hover {
+  color: var(--hover-color);
+}
+.swal2-popup {
+  font-size: 0.4em !important;
+}
+
+footer {
+  background-color: var(--background-color);
+  color: var(--main-color);
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+p.brand strong, a.my-portfolio {
+  font-size: 0.8em;
+}
+a.my-portfolio{
+  color: var(--hover-color);
+}
+a.my-portfolio:hover{
+  color: var(--main-color);
+}
+
+@media (max-width: 768px) {
+  div.hero-background {
+    height: 60vh;
+  }
+  h2.welcome,
+  h2.booking-heading {
+    font-size: 2.5em;
+  }
+  div.date {
+    text-align: start;
+  }
+}
+@media (max-width: 800px) {
+  div.feature-details {
+    width: 80%;
+  }
+
+  div.contact-about {
+    padding: 20px 0 20px 50px;
+  }
+  form {
+    width: 90%;
+    margin-left: 30px;
+    padding: 20px 45px;
+  }
+}
+@media (max-width: 470px) {
+  #sidebar {
+    width: 100%;
+  }
+h1.brand-name {
+    font-size: 2.5em;
+  }
+  h2.slogan{
+    font-size: 1.05em;
+  }
+}
+@media (max-width: 576px) {
+  div.logo {
+    padding-left: 25px;
+  }
+  ul.hideOnMobile {
+    display: none;
+  }
+  nav.navbar {
+    justify-content: end;
+  }
+  div.menu-icon {
+    display: flex;
+    fill: var(--hover-color);
+  }
+  #sidebar li a {
+    line-height: 20px;
+  }
+  h1.brand-name {
+    font-size: 3.5em;
+  }
+  h2.slogan{
+    font-size: 1.1em;
+  }
+  div.hero-background {
+    height: 55vh;
+  }
+
+  /*contact section*/
+  div.contact-container {
+    margin: 50px;
+  }
+  div.contacts-intro {
+    padding-left: 20px;
+    margin-bottom: 30px;
+    margin-top: 0;
+  }
+}
+@media (min-width: 576px) {
+  div.brand,
+  div.contact-info {
+    padding-left: 6vw;
+  }
+  div.features-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /*contact-page*/
+  div.contact-container {
+    margin: 40px 80px;
+  }
+}
